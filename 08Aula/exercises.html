@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 8a ethgege
+    const product = {
+      name: 'basketball',
+      price: 2095,
+      //8c
+      ['delivery-time']: '3 days'
+    };
+    console.log(product);
+    //8b
+    product.price += 500;
+    console.log(product);
+    const product2 = {
+      name: 'PS5',
+      price: 1000,
+      //8c
+      ['delivery-time']: '4 days'
+    }
+    //8d
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price){
+        return product1;
+      }else {
+        return product2;
+      }
+    };
+    console.log(comparePrice(product, product2));
+    //8e
+    function isSameProduct(product1,product2) {
+      if (product1.name === product2.name && product1.price === product2.price) {
+        return true;
+      } else {
+        return false
+      }
+    };
+
+    function isSameProduct2(product1,product2) {
+      return product1.name === product2.name && product1.price === product2.price;
+    };
+
+    const produto1 = {
+      name: 'Sapato',
+      price: 250
+    }
+
+    const produto2 = {
+      name: 'Sandalia',
+      price: 25
+    }
+
+    const produto3 = {
+      name: 'Sapato',
+      price: 250
+    }
+
+    console.log(isSameProduct(produto1,produto2));
+    console.log(isSameProduct(produto1,produto3));
+
+    console.log(isSameProduct2(produto1,produto2));
+    console.log(isSameProduct2(produto1,produto3));
+    //8f
+    randomString = 'TESTANDO ISSO';
+    console.log(randomString.toLowerCase());
+    //8g
+    console.log(randomString.repeat(3).toLowerCase());
+
+    //8h
+
+  </script>
+</body>
+</html>

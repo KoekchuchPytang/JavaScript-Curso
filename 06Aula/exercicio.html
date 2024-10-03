@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    <script>
+        let hour = 16;
+
+        let name = 'Abby';
+
+        let age = '70';
+
+        const isHoliday = true;
+
+
+        if (hour >= 6 && hour < 12){
+            console.log(`Good morning, ${name}`)
+        }else if (hour >= 12 && hour < 18){
+            console.log(`Good afternoon, ${name}`)
+        }else {
+            console.log(`Good night, ${name}`)
+        }
+
+        if ((age <= 6 || age >= 65) && !isHoliday){
+            console.log('Discount');
+        }else{
+            console.log('No discount');
+        }
+
+        let coinFlip = Math.random();
+        let result;
+        if(coinFlip < 0.5){
+            result = `heads`;
+            //console.log(`heads`);
+        }else{
+            result = `tails`;
+            //console.log(`tails`);
+        }
+        
+        let guess = `tails`;
+        
+        if (guess === result){
+            console.log(`You win!`);
+        }else{
+            console.log(`You lose!`);
+        }
+        guess === result ? console.log(`Your win!`) : console.log(`You lose!`);
+
+
+    </script>
+</body>
+</html>
