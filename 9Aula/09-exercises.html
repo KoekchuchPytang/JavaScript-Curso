@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 Exercises</title>
+</head>
+<body>
+  <!-- 9a -->
+  <button>9a</button>
+
+  <button class="js-9b">9b</button>
+  
+  <button onclick="
+    document.querySelector('.result').innerHTML = `You chose: heads`;
+  ">heads</button>
+
+  <button onclick="
+    document.querySelector('.result').innerHTML = `You chose: tails`;
+  ">tails</button>
+
+  <p class="result"></p>
+
+  <input placeholder="Your name" class="yourName" onkeydown="
+    if (event.key === 'Enter'){
+      showTheName();
+    }
+  ">
+
+  <button onclick="
+    showTheName();
+  ">Submit</button>
+
+  <p class="showName"></p>
+
+  <script>
+    console.log(document.querySelector('button'));
+
+    document.querySelector('.js-9b').innerHTML = `9b done!`;
+    //9d
+    function showTheName() {
+      name = document.querySelector('.yourName').value;
+      document.querySelector('.showName').innerHTML = `Your name is: ${name}`;
+    }
+  </script>
+</body>
+</html>
