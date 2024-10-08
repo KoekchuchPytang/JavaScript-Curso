@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+      body{
+        background-color: rgb(25, 25, 25);
+        color: white;
+      }
+      .title{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .move-icon {
+        height: 50px;
+      }
+
+      .move-button {
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <p class="title">Rock Paper Scissors</p>
+
+    <button onclick="
+      playGame('rock');
+    " class="move-button">
+    <img src="/midia/rock-emoji.png" alt="Mão fechada, pedra. " class="move-icon">
+    </button>
+
+    <button onclick="
+      playGame('paper');
+    " class="move-button">
+    <img src="/midia/paper-emoji.png" alt="Mão aberta, papel." class="move-icon">
+    </button>
+
+    <button onclick="
+      playGame('scissors');
+    " class="move-button">
+    <img src="/midia/scissors-emoji.png" alt="Dois dedos esticados, tesoura." class="move-icon">
+    </button>
+
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button onclick=
+    "
+    score.wins = 0;
+    score.ties = 0;
+    score.losses = 0;
+
+    localStorage.removeItem('score');
+    updateScoreElement();
+    "
+    >Reset Score</button>
+
+    
+
+    <p class="final-project-link">
+      <a href="https://supersimple.dev/projects/rock-paper-scissors">Click here</a>
+      to see the final version of the project.
+    </p>
+
+    <script>
+      
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+
+      let computerMove = '';
+      let result = '';
+      let playerMove1 = '';
+      
+
+      document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      
+      
+      
+      function pickComputerMove() {
+        const randomNumber = Math.random();
+
+        
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = 'rock';
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = 'paper';
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = 'scissors';
+        }
+
+        return computerMove;
+      }
+
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+        playerMove1 = playerMove;
+        console.log(playerMove1);
+
+        if (playerMove === 'scissors') {
+          if (computerMove === 'rock') {
+            result = 'You lose.';
+          } else if (computerMove === 'paper') {
+            result = 'You win.';
+          } else if (computerMove === 'scissors') {
+            result = 'Tie.';
+          }
+
+        } else if (playerMove === 'paper') {
+          if (computerMove === 'rock') {
+            result = 'You win.';
+          } else if (computerMove === 'paper') {
+            result = 'Tie.';
+          } else if (computerMove === 'scissors') {
+            result = 'You lose.';
+          }
+
+        } else if (playerMove === 'rock') {
+          if (computerMove === 'rock') {
+            result = 'Tie.';
+          } else if (computerMove === 'paper') {
+            result = 'You lose.';
+          } else if (computerMove === 'scissors') {
+            result = 'You win.';
+          }
+        }
+
+        if (result === `You win.`) {
+            score.wins++;
+        }else if(result === `You lose.`){
+            score.losses++;
+        }else{
+            score.ties++;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        
+        updateScoreElement();
+        document.querySelector('.js-result')
+          .innerHTML = result;
+        document.querySelector('.js-moves')
+          .innerHTML = `You ${playerMove1} - ${computerMove} Computer.`;
+        
+      }
+      
+      function updateScoreElement() {
+        document.querySelector('.js-score')
+          .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      }
+
+    </script>
+  
+
+</body>
+</html>
