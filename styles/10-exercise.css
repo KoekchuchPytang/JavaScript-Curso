@@ -1,0 +1,77 @@
+button {
+  cursor: pointer;
+}
+.addButton{
+  background-color: rgb(255, 216, 20);
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px;
+}
+
+.requestButton {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.scheduleButton {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+}
+
+.gamingButton{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.musicButton{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.techButton{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+
+}
+/*.not-toggled {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+*/
+
+.is-toggled {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
